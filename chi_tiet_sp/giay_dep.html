@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Danh Sách Sản Phẩm - UTCMART</title>
+    <link rel ="stylesheet" href="partcss.css">
+    <!-- Tải Lucide Icons (dùng cho các biểu tượng như giỏ hàng, tìm kiếm) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+   
+</head>
+<body>
+
+    <!-- 1. HEADER (Phần Đầu Trang) -->
+    <header class="header">
+        <div class="container">
+            <div class="header-main">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="#">UTCMART</a>
+                </div>
+
+                <!-- Thanh Tìm Kiếm (Trung Tâm) -->
+                <div class="search-bar">
+                    <div class="search-bar-input">
+                        <input type="text" placeholder="Nhập loại sản phẩm, tên sản phẩm">
+                        <button><i data-lucide="search" class="lucide"></i></button>
+                    </div>
+                </div>
+
+                <!-- Icons & Đăng Nhập -->
+                <div class="header-icons">
+                    <a href="#" class="header-icon-item">
+                        <i data-lucide="shopping-cart" class="lucide" style="width: 24px; height: 24px;"></i>
+                        <p class="hidden-on-mobile">Giỏ Hàng</p>
+                    </a>
+                    <a href="#" class="header-icon-item">
+                        <i data-lucide="user" class="lucide" style="width: 24px; height: 24px;"></i>
+                        <p class="hidden-on-mobile">Đăng Nhập</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Dải Menu Phụ (Mô phỏng Tin Tức & Hỗ Trợ) -->
+        <div class="sub-menu">
+            <div class="container">
+                <div class="sub-menu-links">
+                    <a href="../tin_tuc/parthtml.html">Tin Tức</a>
+                    <a href="../ho_tro_nguoi_dung/parthtml.html">Hỗ Trợ</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. MAIN CONTENT (Nội Dung Chính) -->
+    <div class="container">
+        <div style="padding-top: 32px;">
+            
+            <!-- Breadcrumb & Tiêu đề -->
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <ol>
+                    <li class="breadcrumb-item">
+                        <a href="../parthtml.html">Trang Chủ</a>
+                        <i data-lucide="chevron-right" class="lucide"></i>
+                    </li>
+                    
+                    <li class="breadcrumb-item">
+                        <a href="#">Đồ Điện Tử</a>
+                    </li>
+                </ol>
+            </nav>
+
+            <h1 class="main-title">Đồ Điện Tử Cao Cấp</h1>
+
+            <!-- Layout chính: Sidebar và Product Grid -->
+            <div class="main-layout">
+                
+                <!-- SIDEBAR (Danh Mục & Bộ Lọc) -->
+                <aside>
+                    <!-- Danh Mục Sản Phẩm -->
+                    <div class="sidebar-section">
+                        <h2 class="sidebar-title">Danh mục sản phẩm</h2>
+                        <ul class="sidebar-list">
+                            <li class="active-category"><a href="quan_ao.html">Thời Trang </a></li>
+                            <li><a href="giay_dep.html">Giày & Dép</a></li>
+                            <li><a href="do_gia_dung.html">Đồ Gia Dụng</a></li>
+                            <li><a href="van_phong_pham.html">Sách & Văn Phòng Phẩm</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Bộ Lọc Giá -->
+                    <div class="sidebar-section">
+                       
+                    </div>
+                </aside>
+
+                <!-- PRODUCT LISTING (Danh Sách Sản Phẩm) -->
+                <main>
+                    
+                    
+                    <!-- Lưới Sản Phẩm -->
+                    <div class="product-grid">
+                        
+                        <!-- Lặp lại 8 Thẻ Sản Phẩm mẫu -->
+                        <div class="product-card">
+                            <a href="#">
+                                <!-- Placeholder Image (Mô phỏng ảnh sản phẩm 1) -->
+                                <div class="product-image">
+                                    <img src="https://placehold.co/600x600/E53E3E/ffffff?text=Product+1" alt="Áo Sơ Mi Lụa Cao Cấp">
+                                </div>
+                                <div class="product-info">
+                                    <p class="product-name">Áo Sơ Mi Lụa Cao Cấp Hàn Quốc Dáng Suông</p>
+                                    <div class="product-price-group">
+                                        <span class="product-price">290.000đ</span>
+                                        <span class="product-old-price">350.000đ</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        
+                        <div class="product-card">
+                            <a href="#">
+                                <!-- Placeholder Image (Mô phỏng ảnh sản phẩm 2) -->
+                                <div class="product-image">
+                                    <img src="https://placehold.co/600x600/4c7cff/ffffff?text=Product+2" alt="Áo Thun Cotton Basic">
+                                </div>
+                                <div class="product-info">
+                                    <p class="product-name">Áo Thun Nam Basic Cotton 100% Thoáng Mát</p>
+                                    <div class="product-price-group">
+                                        <span class="product-price">300.000đ</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        
+                        <div class="product-card">
+                            <a href="#">
+                                <!-- Placeholder Image (Mô phỏng ảnh sản phẩm 3) -->
+                                <div class="product-image">
+                                    <img src="https://placehold.co/600x600/6b7280/ffffff?text=Product+3" alt="Áo Khoác Da Nữ">
+                                </div>
+                                <div class="product-info">
+                                    <p class="product-name">Quần Ống Rộng Vải Tuyết Mưa, Màu Xám Chuẩn Form</p>
+                                    <div class="product-price-group">
+                                        <span class="product-price">450.000đ</span>
+                                        <span class="product-old-price">550.000đ</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="product-card">
+                            <a href="#">
+                                <!-- Placeholder Image (Mô phỏng ảnh sản phẩm 4) -->
+                                <div class="product-image">
+                                    <img src="https://placehold.co/600x600/f59e0b/ffffff?text=Product+4" alt="Chân Váy Jean">
+                                </div>
+                                <div class="product-info">
+                                    <p class="product-name">Chân Váy Jean Ngắn Cạp Cao Chữ A Thời Thượng</p>
+                                    <div class="product-price-group">
+                                        <span class="product-price">199.000đ</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        
+                        <div class="product-card">
+                            <a href="#">
+                                <!-- Placeholder Image (Mô phỏng ảnh sản phẩm 5) -->
+                                <div class="product-image">
+                                    <img src="https://placehold.co/600x600/10b981/ffffff?text=Product+5" alt="Áo Thun In Hình">
+                                </div>
+                                <div class="product-info">
+                                    <p class="product-name">Áo Thun Unisex Form Rộng In Hình Gấu Dễ Thương</p>
+                                    <div class="product-price-group">
+                                        <span class="product-price">250.000đ</span>
+                                        <span class="product-old-price">300.000đ</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        
+                        <div class="product-card">
+                            <a href="#">
+                                <!-- Placeholder Image (Mô phỏng ảnh sản phẩm 6) -->
+                                <div class="product-image">
+                                    <img src="https://placehold.co/600x600/a855f7/ffffff?text=Product+6" alt="Set Đồ Công Sở">
+                                </div>
+                                <div class="product-info">
+                                    <p class="product-name">Set Đồ Công Sở Áo Croptop Kèm Quần Suông Thanh Lịch</p>
+                                    <div class="product-price-group">
+                                        <span class="product-price">590.000đ</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="product-card">
+                            <a href="#">
+                                <!-- Placeholder Image (Mô phỏng ảnh sản phẩm 7) -->
+                                <div class="product-image">
+                                    <img src="https://placehold.co/600x600/06b6d4/ffffff?text=Product+7" alt="Váy Đầm Maxi">
+                                </div>
+                                <div class="product-info">
+                                    <p class="product-name">Váy Đầm Maxi Voan Hoa Nhí Đi Biển Cực Xinh</p>
+                                    <div class="product-price-group">
+                                        <span class="product-price">480.000đ</span>
+                                        <span class="product-old-price">600.000đ</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="product-card">
+                            <a href="#">
+                                <!-- Placeholder Image (Mô phỏng ảnh sản phẩm 8) -->
+                                <div class="product-image">
+                                    <img src="https://placehold.co/600x600/f43f5e/ffffff?text=Product+8" alt="Túi Xách Da">
+                                </div>
+                                <div class="product-info">
+                                    <p class="product-name">Túi Xách Da Thật Phong Cách Vintage Hàn Quốc</p>
+                                    <div class="product-price-group">
+                                        <span class="product-price">850.000đ</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        
+                    </div>
+                    
+                    <!-- Phân Trang -->
+                  
+
+                </main>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 3. FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>Về UTCMART</h4>
+                    <ul>
+                        <li><a href="#">Giới thiệu</a></li>
+                        <li><a href="#">Tuyển dụng</a></li>
+                        <li><a href="#">Chính sách bảo mật</a></li>
+                        <li><a href="#">Điều khoản sử dụng</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Hỗ trợ khách hàng</h4>
+                    <ul>
+                        <li><a href="#">Trung tâm trợ giúp</a></li>
+                        <li><a href="#">Hướng dẫn mua hàng</a></li>
+                        <li><a href="#">Chính sách đổi trả</a></li>
+                        <li><a href="#">Vận chuyển</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Thanh toán</h4>
+                    <p style="color: #d1d5db;">Chấp nhận các hình thức thanh toán:</p>
+                    <div style="margin-top: 8px;">
+                        <!-- Mô phỏng Icons thanh toán -->
+                        <span style="font-size: 24px;">💳 💰 🏦</span>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Liên hệ</h4>
+                    <p style="color: #d1d5db;">Email: support@utcmart.vn</p>
+                    <p style="color: #d1d5db;">Hotline: 1900 6868</p>
+                    <div style="margin-top: 12px;">
+                        <!-- Mô phỏng Social Media Icons -->
+                        <i data-lucide="facebook" class="lucide" style="width: 20px; height: 20px; margin-right: 8px;"></i>
+                        <i data-lucide="instagram" class="lucide" style="width: 20px; height: 20px; margin-right: 8px;"></i>
+                        <i data-lucide="twitter" class="lucide" style="width: 20px; height: 20px;"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2024 UTCMART. Tất cả bản quyền được bảo lưu.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Khởi tạo Lucide Icons -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            lucide.createIcons();
+        });
+    </script>
+  
+</body>
+</html>

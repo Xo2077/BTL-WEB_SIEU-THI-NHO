@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>VinMart Clone - Siêu Thị Online (Đơn vị PX)</title>
+  <link rel="stylesheet" href="partcss.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+</head>
+<body>
+  <header class="search_bar" role="banner">
+    <div class="logo-container">
+      <span class="logo">SiXMART</span>
+    </div>
+
+    <form class="search-form" role="search" action="/search" method="get">
+      <label for="q" class="visually-hidden">Tìm kiếm sản phẩm</label>
+      <input id="q" name="q" type="search" placeholder="Nhập loại sản phẩm, tên sản phẩm" />
+      <button type="submit" class="search-button" aria-label="Tìm kiếm">
+        <i class="fas fa-search" aria-hidden="true"></i>
+      </button>
+    </form>
+
+    <nav class="header-icons" aria-label="Tùy chọn người dùng">
+      <button id="icon_cart" class="cart-icon-link" aria-label="Giỏ hàng" aria-expanded="false" type="button">
+        <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+        <span class="cart-text">Giỏ Hàng</span>
+        <span class="cart-count" aria-live="polite" aria-atomic="true">0</span>
+      </button>
+
+      <a href="/login" class="login-icon-link" id="icon_signin" aria-label="Đăng nhập">
+        <i class="fas fa-user-circle" aria-hidden="true"></i>
+        <span>Đăng Nhập</span>
+      </a>
+    </nav>
+
+    <div id="cart_preview" class="cart-preview" hidden aria-hidden="true">
+      <header class="cart-preview__header">
+        <h3>Giỏ hàng của bạn</h3>
+        <button id="cart_close" class="cart-close" aria-label="Đóng giỏ hàng" type="button">
+          <i class="fas fa-times"></i>
+        </button>
+  </header>
+      <ul id="cart_items" class="cart-preview__list">
+        <!-- items injected here -->
+      </ul>
+      <div class="cart-preview__footer">
+        <div class="cart-total">Tổng: <span id="cart_total">0₫</span></div>
+        <div class="cart-actions">
+          <a href="/cart" class="btn btn--secondary">Xem giỏ hàng</a>
+          <a href="/checkout" class="btn btn--primary">Thanh toán</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+<!-- ...existing code... -->
+    <div class="custom-select-menu">
+      <button class="select-header" aria-expanded="false" aria-controls="categories">
+        <i class="fas fa-bars" aria-hidden="true"></i>
+        <span>Danh mục sản phẩm</span>
+      </button>
+
+      <!-- updated: each item has data-bg for preview; links still work without JS -->
+      <div id="categories" class="select-options" hidden>
+        <a href="chi_tiet_sp/giay_dep.html" class="list-item" data-bg="anh/giay_dep_bg.jpg">Giày Dép</a>
+        <a href="chi_tiet_sp/quan_ao.html" class="list-item" data-bg="anh/quan_ao_bg.jpg">Quần Áo</a>
+        <a href="chi_tiet_sp/do_dien_tu.html" class="list-item" data-bg="anh/do_dien_tu_bg.jpg">Đồ Điện Tử</a>
+        <a href="chi_tiet_sp/do_gia_dung.html" class="list-item" data-bg="anh/do_gia_dung_bg.jpg">Đồ Gia Dụng</a>
+        <a href="#" class="list-item" data-bg="anh/do_uong_bg.jpg">Đồ Uống</a>
+        <a href="#" class="list-item" data-bg="anh/do_an_bg.jpg">Đồ Ăn</a>
+        <a href="#" class="list-item" data-bg="anh/do_the_thao_bg.jpg">Đồ Thể Thao</a>
+        <a href="#" class="list-item" data-bg="anh/van_phong_pham_bg.jpg">Văn Phòng Phẩm</a>
+      </div>
+
+      <!-- preview panel: shows hovered category background + title -->
+      <div id="category_preview" class="category-preview" aria-hidden="true">
+        <div class="category-preview__overlay">
+          <div class="category-preview__title" id="category_preview_title" aria-hidden="true"></div>
+        </div>
+      </div>
+    </div>
+<!-- ...existing code... -->
+
+    <a href="tin_tuc/parthtml.html" class="menu-button">
+      <i class="fas fa-envelope" aria-hidden="true"></i><span>Tin Tức</span>
+    </a>
+    <a href="ho_tro_nguoi_dung/parthtml.html" class="menu-button">
+      <i class="fas fa-comments" aria-hidden="true"></i><span>Hỗ trợ</span>
+    </a>
+  </nav>
+
+  <main>
+    <section class="banner" aria-label="Banner chính">
+      <div class="main_banner"><img src="anh/main_banner.png" alt="Banner chính" /></div>
+      <div class="remain_banner">
+        <img src="anh/remain1.png" alt="Banner phụ 1" />
+        <img src="anh/remain2.png" alt="Banner phụ 2" />
+        <img src="anh/remain4.png" alt="Banner phụ 3" />
+      </div>
+    </section>
+
+    <h2 class="bar_decorate">Những sản phẩm nổi bật</h2>
+
+    <section class="items" aria-label="Sản phẩm nổi bật">
+        <article class="product">
+        <a href="quanao.html/quanao2.html">
+          <img src="anh/z7134472630565_eb9853200b9ca1a86e3900a4ab36823f.jpg" alt="Áo Thun Nam Basic UTC" />
+          <h3>Áo Thun Nam Basic UTC - Cotton 100% Thoáng Mát</h3>
+        </a>
+        <p class="unit">bộ</p>
+        <p class="gia">250.000<sub>₫</sub> <small class="giacu">300.000<sub>₫</sub></small></p>
+        <form action="/cart/add" method="post">
+          <input type="hidden" name="product" value="z7134472630565" />
+          <button type="submit">Thêm vào giỏ hàng</button>
+        </form>
+        </article>
+
+        <article class="product">
+        <a href="quanao.html/quanao3.html">
+          <img src="anh/z7134472681148_6f3ce24620673f5b4e3fcbf35fa4e655.jpg" alt="Set Áo Cổ Nơ" />
+          <h3>Set Áo Cổ Nơ Cách Điệu Và Quần Short Lưng Cao</h3>
+        </a>
+        <p class="unit">bộ</p>
+        <p class="gia">290.000<sub>₫</sub> <small class="giacu">350.000<sub>₫</sub></small></p>
+        <form action="/cart/add" method="post"><button type="submit">Thêm vào giỏ hàng</button></form>
+        </article>
+
+        <article class="product">
+        <a href="dien.html/dien3.html">
+          <img src="anh/z7134473066325_cfb0cec1e4331f08c4ef23eb54fa361f.jpg" alt="Đồng Hồ Đo Điện Áp" />
+          <h3>Đồng Hồ Đo Điện Áp Không dây Đo chuẩn 100%</h3>
+        </a>
+        <p class="unit">bộ</p>
+        <p class="gia">2.050.000<sub>₫</sub> <small class="giacu">3.000.000<sub>₫</sub></small></p>
+        <form action="/cart/add" method="post"><button type="submit">Thêm vào giỏ hàng</button></form>
+        </article>
+
+        <article class="product">
+            <a href="quanao.html/quanao4.html">
+            <img src="anh/z7134472722360_b04ed4f52a92dbb440bda8d85f14bb95.jpg" alt="Thể thao đôi" />
+            <h3>QUẦN ÁO THỂ THAO NAM BỘ HÈ CHO NAM NỮ IN CHỮ ĐỎ CẶP ĐÔI 2024</h3>
+            </a>
+            <p class="unit">bộ</p>
+            <p class="gia">250.000<sub>₫</sub> <small class="giacu">500.000<sub>₫</sub></small></p>
+            <form action="/cart/add" method="post"><button type="submit">Thêm vào giỏ hàng</button></form>
+        </article>  
+
+        <article class="product">
+            <a href="quanao.html/quanao5.html">
+            <img src="anh/z7134472753108_c6e3638ebb95b29d3ef5ea571aad4d6a.jpg" alt="Đồ tập gym" />
+            <h3>MBộ Đồ, Sport ALL, Tập Thể Dục Chạy Bộ Tập Gym, Bền, Mát mẻ đủ size 30-90kg</h3>
+            </a>
+            <p class="unit">bộ</p>
+            <p class="gia">250.000<sub>₫</sub> <small class="giacu">900.000<sub>₫</sub></small></p>
+            <form action="/cart/add" method="post"><button type="submit">Thêm vào giỏ hàng</button></form>
+        </article>
+
+        <article class="product">
+            <a href="dadung.html/dadung2.html">
+            <img src="anh/z7134473619663_76ca72a3426819783371e492b72d723a.jpg" alt="May xay thịt" />
+            <h3>Máy Xay Thịt Đăng Cấp Vũ Trụ Xay Thịt Như Xay Xinh Tố</h3>
+            </a>
+            <p class="unit">bộ</p>
+            <p class="gia">250.000<sub>₫</sub> <small class="giacu">600.000<sub>₫</sub></small></p>
+            <form action="/cart/add" method="post"><button type="submit">Thêm vào giỏ hàng</button></form>
+        </article>
+
+        <article class="product">
+            <a href="dadung.html/dadung6.html">
+            <img src="anh/z7134473748508_629ca20705ecb371e481ad621173a1c6.jpg" alt="Dao gọt hoa quả" />
+            <h3>Bộ Giao Gọt Hoa Quả Đa Năng Cắt Được Mọi Thứ Ngoài Tình Cảm VS NYC</h3>
+            </a>
+            <p class="unit">bộ</p>
+            <p class="gia">800.000<sub>₫</sub> <small class="giacu">400.000<sub>₫</sub></small></p>
+            <form action="/cart/add" method="post"><button type="submit">Thêm vào giỏ hàng</button></form>
+        </article> 
+        
+        <article class="product">
+            <a href="dadung.html/dadung4.html">
+            <img src="anh/z7134473667556_91adb8b4f0f31c96ecbc289ee6cd95fe.jpg" alt="Kệ để đồ inox" />
+            <h3>Kệ Để Đồ INOX-304 Chống Rỉ Sét Tiện Nghi</h3>
+            </a>
+            <p class="unit">bộ</p>
+            <p class="gia">700.000<sub>₫</sub> <small class="giacu">950.000<sub>₫</sub></small></p>
+            <form action="/cart/add" method="post"><button type="submit">Thêm vào giỏ hàng</button></form>
+        </article>
+
+
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="introduction">
+      <h1>UTCMART</h1>
+      <p>Công Ty Cổ Phần Dịch Vụ Thương Mại Tổng Hợp WinCommerce<br/>
+      Mã số doanh nghiệp: 0104918404 — Đăng ký lần đầu ngày 20/09/2010</p>
+      <img src="anh/Screenshot_2025-10-20_163017.png" alt="Logo công ty" />
+    </div>
+
+    <div class="publicter">
+      <h5>Nhà sản xuất</h5>
+      <p>Thế Đạt<br/>Trọng Sang<br/>Văn Nghĩa<br/>Danh Gia Hoàng<br/>Nguyễn Hoàng</p>
+    </div>
+
+    <div class="address">
+      <h5>Địa chỉ</h5>
+      <p>Trụ sở chính: Số 23 Lê Duẩn, Phường Bến Nghé, Quận 1, TP. HCM</p>
+    </div>
+
+    <div class="service">
+      <h5>Chăm sóc khách hàng</h5>
+      <p>Mua online: 0123456789<br/>Email: Nhom6dzkhoaito@gmail.com</p>
+      <img src="anh/Screenshot_2025-10-20_163952.png" alt="Chứng nhận" />
+    </div>
+  </footer>
+
+  <script src="javascript/menu.js" defer></script>
+</body> 
+</html>

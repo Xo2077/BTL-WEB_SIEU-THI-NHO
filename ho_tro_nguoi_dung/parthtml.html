@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hỗ Trợ Khách Hàng - UTCMART</title>
+  <style>
+    :root{
+      --bg:#f6f7fb;
+      --card:#ffffff;
+      --accent:red;
+      --muted:#6b7280;
+      --maxw:1100px;
+      --gap:16px;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:#111827;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+    }
+
+    .container{
+      max-width:var(--maxw);
+      margin:0 auto;
+      padding:24px;
+    }
+
+    /* Header */
+    header.site-header{
+      background:var(--accent);
+      color:#fff;
+      padding:18px 0;
+      box-shadow:0 2px 6px rgba(0,0,0,0.08);
+      position:sticky;
+      top:0;
+      z-index:40;
+    }
+    .header-inner{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      justify-content:space-between;
+      max-width:var(--maxw);
+      margin:0 auto;
+      padding:0 24px;
+    }
+    .logo{font-weight:800; font-size:20px; letter-spacing:-0.5px}
+    .header-actions{display:flex; gap:12px; align-items:center}
+    .btn{
+      background:#fff; color:var(--accent); border-radius:8px; padding:8px 12px; font-weight:600; border:none; cursor:pointer;
+    }
+
+    /* Hero */
+    .hero{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:20px;
+      align-items:center;
+      padding:28px 24px;
+    }
+    .hero-card{
+      background:var(--card);
+      border-radius:12px;
+      padding:20px;
+      box-shadow:0 6px 18px rgba(16,24,40,0.06);
+    }
+    .hero h1{margin:0 0 8px; font-size:22px}
+    .hero p{margin:0; color:var(--muted)}
+
+    /* Search support */
+    .search-support{
+      margin-top:14px;
+      display:flex;
+      gap:12px;
+      align-items:center;
+    }
+    .search-support input[type="search"]{
+      flex:1;
+      padding:12px 14px;
+      border-radius:9999px;
+      border:1px solid #e6e9ef;
+      outline:none;
+      font-size:14px;
+    }
+    .search-support button{
+      background:var(--accent);
+      color:#fff;
+      border:none;
+      padding:10px 14px;
+      border-radius:9999px;
+      cursor:pointer;
+      font-weight:600;
+    }
+
+    /* Layout main */
+    .main{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:20px;
+      margin-top:20px;
+    }
+
+    @media(min-width:900px){
+      .hero{grid-template-columns: 1fr 360px}
+      .main{grid-template-columns: 1fr 360px}
+    }
+
+    /* Left column (FAQ, Guides) */
+    .card{background:var(--card); border-radius:10px; padding:18px; box-shadow:0 4px 12px rgba(16,24,40,0.04)}
+    .section-title{font-size:16px; font-weight:700; margin:0 0 12px}
+    .faq-list details{
+      margin-bottom:10px;
+      border-radius:8px;
+      padding:10px;
+      border:1px solid #eef2f7;
+      background:linear-gradient(180deg, rgba(245,247,250,0.8), rgba(255,255,255,0.6));
+    }
+    .faq-list summary{
+      list-style:none;
+      cursor:pointer;
+      font-weight:600;
+      outline:none;
+    }
+    .faq-list p{margin:8px 0 0; color:var(--muted); font-size:14px}
+
+    /* Right column (Contact form + quick links) */
+    .contact-form label{display:block; font-size:13px; color:var(--muted); margin-bottom:6px}
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form textarea{
+      width:100%;
+      padding:10px 12px;
+      border-radius:8px;
+      border:1px solid #e6e9ef;
+      font-size:14px;
+    }
+    .contact-form textarea{min-height:120px; resize:vertical}
+    .contact-form .actions{display:flex; gap:8px; margin-top:12px}
+    .muted{color:var(--muted); font-size:14px}
+
+    .quick-links ul{list-style:none;padding:0;margin:0}
+    .quick-links li{padding:8px 0; border-bottom:1px dashed #f1f3f6}
+    .quick-links a{color:var(--accent); text-decoration:none; font-weight:600}
+
+    /* Footer */
+    footer.page-footer{margin-top:28px; padding:18px 24px; text-align:center; color:var(--muted); font-size:13px}
+
+    /* Tiny helpers */
+    .small{font-size:13px}
+  </style>
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <div class="logo">UTCMART - Hỗ trợ</div>
+      <div class="header-actions">
+        <a class="small" href="mailto:support@utcmart.vn" style="color:#fff; text-decoration:underline">support@utcmart.vn</a>
+        <button class="btn" onclick="location.href='#contact'">Liên hệ</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-card">
+        <h1>Chúng tôi có thể giúp gì cho bạn?</h1>
+        <p class="muted">Tìm câu trả lời nhanh hoặc gửi yêu cầu — đội ngũ UTCMART sẵn sàng hỗ trợ.</p>
+
+        <!-- Search -->
+        <div class="search-support" style="margin-top:16px">
+          <input type="search" placeholder="Tìm: hoàn trả, vận chuyển, mã giảm giá..." aria-label="Tìm trợ giúp">
+          <button aria-label="Tìm">Tìm</button>
+        </div>
+
+        <!-- Quick categories -->
+        <div style="display:flex; gap:10px; margin-top:14px; flex-wrap:wrap">
+          <span class="small" style="background:#fff; padding:8px 10px; border-radius:8px; border:1px solid #eef2f7">Đơn hàng</span>
+          <span class="small" style="background:#fff; padding:8px 10px; border-radius:8px; border:1px solid #eef2f7">Vận chuyển</span>
+          <span class="small" style="background:#fff; padding:8px 10px; border-radius:8px; border:1px solid #eef2f7">Thanh toán</span>
+          <span class="small" style="background:#fff; padding:8px 10px; border-radius:8px; border:1px solid #eef2f7">Đổi trả</span>
+        </div>
+      </div>
+
+      <!-- Right card: Hotline & Hours -->
+      <aside class="card" aria-labelledby="helpHours">
+        <h2 id="helpHours" class="section-title">Hotline & Giờ làm việc</h2>
+        <p style="font-size:20px; margin:6px 0 0; font-weight:700">1900 6868</p>
+        <p class="muted small" style="margin-top:6px">Thứ 2 - Thứ 7: 08:00 - 20:00<br>Chủ nhật: 08:00 - 12:00</p>
+
+        <div style="margin-top:14px">
+          <p class="section-title" style="font-size:14px; margin-bottom:8px">Các kênh hỗ trợ</p>
+          <p class="muted small">Email: <a href="mailto:support@utcmart.vn">support@utcmart.vn</a></p>
+          <p class="muted small">Zalo / Messenger: <span style="font-weight:700">@utcmart_support</span></p>
+        </div>
+      </aside>
+    </section>
+
+    <!-- Main content + Sidebar -->
+    <section class="main">
+      <!-- Left: FAQ & Guides -->
+      <div>
+        <div class="card">
+          <h3 class="section-title">Câu hỏi thường gặp (FAQ)</h3>
+          <div class="faq-list">
+            <details>
+              <summary>1. Làm sao để theo dõi đơn hàng?</summary>
+              <p>Vào mục "Đơn hàng" trong tài khoản -> chọn đơn cần theo dõi -> nhấn "Xem trạng thái". Bạn sẽ nhận được link vận chuyển khi shop cập nhật mã vận đơn.</p>
+            </details>
+
+            <details>
+              <summary>2. Chính sách đổi trả như thế nào?</summary>
+              <p>Trong vòng 7 ngày kể từ khi nhận hàng, sản phẩm còn nguyên tem, chưa qua sử dụng có thể đổi trả. Vui lòng liên hệ support để được hướng dẫn chi tiết.</p>
+            </details>
+
+            <details>
+              <summary>3. Cách sử dụng mã giảm giá?</summary>
+              <p>Trong trang thanh toán, ở ô "Mã giảm giá", nhập mã và nhấn Áp dụng. Một số mã có điều kiện tối thiểu và không áp dụng cho sản phẩm giảm giá.</p>
+            </details>
+
+            <details>
+              <summary>4. Thời gian xử lý hoàn tiền?</summary>
+              <p>Hoàn tiền thường mất 3-7 ngày làm việc tùy hình thức thanh toán. Nếu quá thời gian, liên hệ email hoặc hotline kèm mã đơn hàng.</p>
+            </details>
+          </div>
+        </div>
+
+        <div style="height:16px"></div>
+
+        <div class="card">
+          <h3 class="section-title">Hướng dẫn nhanh</h3>
+          <ol style="margin:0 0 0 18px; color:var(--muted)">
+            <li>Kiểm tra đơn hàng: Tài khoản → Đơn hàng</li>
+            <li>Yêu cầu đổi trả: Liên hệ support kèm ảnh/video lỗi</li>
+            <li>Khiếu nại vận chuyển: Gửi mã vận đơn + mô tả</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Right: Contact form & quick links -->
+      <aside>
+        <div class="card contact-form" id="contact" aria-labelledby="contactTitle">
+          <h3 id="contactTitle" class="section-title">Gửi yêu cầu hỗ trợ</h3>
+          <p class="muted small">Điền thông tin, chúng tôi sẽ phản hồi trong vòng 24-48 giờ (ngày làm việc).</p>
+
+          <!-- NOTE: form here uses mailto fallback; trong dự án thực tế nên gửi lên server -->
+          <form action="mailto:support@utcmart.vn" method="post" enctype="text/plain" style="margin-top:12px">
+            <label for="name">Họ & Tên</label>
+            <input id="name" name="name" type="text" placeholder="Nguyễn Văn A" required>
+
+            <label for="email" style="margin-top:10px">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required>
+
+            <label for="order" style="margin-top:10px">Mã đơn (nếu có)</label>
+            <input id="order" name="order" type="text" placeholder="VD: 12345678">
+
+            <label for="message" style="margin-top:10px">Nội dung</label>
+            <textarea id="message" name="message" placeholder="Mô tả vấn đề, đính kèm link/ảnh (nếu có)..." required></textarea>
+
+            <div class="actions">
+              <button type="submit" class="btn" style="background:var(--accent); color:#fff; border-radius:8px; padding:10px 14px">Gửi yêu cầu</button>
+              <button type="reset" class="btn" style="background:#fff; color:var(--accent); border:1px solid #f0e6e6">Xóa</button>
+            </div>
+          </form>
+
+          <div style="height:14px"></div>
+
+          <div class="quick-links">
+            <h4 class="section-title" style="font-size:14px">Tài nguyên nhanh</h4>
+            <ul>
+              <li><a href="#">Chính sách đổi trả</a></li>
+              <li><a href="#">Hướng dẫn thanh toán</a></li>
+              <li><a href="#">Câu hỏi thường gặp chung</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="height:12px"></div>
+
+        <div class="card" aria-labelledby="helpSafety">
+          <h4 id="helpSafety" class="section-title" style="font-size:14px">Mẹo an toàn</h4>
+          <p class="muted small">Không tiết lộ mật khẩu, mã OTP hoặc thông tin thẻ cho bất kỳ ai tự xưng là nhân viên hỗ trợ. Mọi yêu cầu hợp lệ đều được xử lý trên hệ thống chính thức của UTCMART.</p>
+        </div>
+      </aside>
+    </section>
+
+    <footer class="page-footer">
+      © <span id="year"></span> UTCMART • Hỗ trợ khách hàng • Email: <a href="mailto:support@utcmart.vn">support@utcmart.vn</a>
+    </footer>
+  </main>
+
+  <script>
+    // chỉ 1 dòng nhỏ để cập nhật năm — bạn có thể bỏ nếu muốn "pure HTML/CSS"
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
